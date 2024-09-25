@@ -33,6 +33,90 @@ font-family: 'Trebuchet MS', 'Arial', 'san-serif';
     background-color: transparent;
 }
 
+.edit {
+    border: 1.5px solid rgb(141 181 145);
+    color: rgb(141 181 145);
+    text-transform: uppercase;
+
+
+}
+
+.edit:hover {
+    background-color: rgb(182 223 186);
+}
+
+.edit:active {
+    
+    color: rgb(255 255 255);
+    background-color: rgb(141 181 145);
+}
+
+
+.delete {
+
+    border :1.5px solid rgb(255 175 163);  ;
+    color: rgb(255 175 163);
+    text-transform: uppercase;
+ 
+}
+
+.delete:hover {
+    
+    background-color: rgb(255 201 193);
+}
+
+.delete:active {
+    
+    color: rgb(255 255 255);
+    background-color: rgb(255 175 163);
+}
+
+.create {
+
+    border:1.5px solid rgb(108 115 148);
+    background-color:rgb(108 115 148) !important;
+    color: rgb(255 255 255);
+    text-transform: uppercase;
+
+}
+
+.create:hover {
+
+    background-color: rgb(117, 122, 150) !important;
+     
+}
+
+.create:active {
+
+    border:1.5px solid rgb(108 115 148);
+    background-color: rgb(80, 93, 154) !important;
+    color: rgb(255 255 255) !important;
+}
+
+
+.signout {
+
+    border:1.5px solid rgb(255 175 163);
+    background-color: rgb(255 175 163) !important;
+    color: rgb(234 234 234);
+    text-transform: uppercase;
+
+}
+
+.signout:hover {
+
+    background-color: rgb(175 94 94) !important;
+    border: 1.5px solid rgb(175 94 94);
+}
+
+.signout:active {
+
+    border: 1.5px solid rgb(175 81 81) !important;
+    color: rgb(255 255 255);
+    background-color: rgb(175 81 81) !important;
+}
+
+
 /* Styling ListHeader */
 
 .listHeader{

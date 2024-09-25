@@ -13,9 +13,9 @@ const ListHeader = ({listName}) => {
       <div>
         <h1>{listName}</h1>
         <div className="button-container">
-          <button className="Create" > ADD NEW </button> 
+          <button className="create" > ADD NEW </button> 
           
-          <button className="SignOut" onClick = {signOut} > SIGN OUT </button>
+          <button className="signout" onClick = {signOut} > SIGN OUT </button>
         </div>
       </div>
     );
