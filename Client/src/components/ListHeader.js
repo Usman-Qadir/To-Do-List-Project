@@ -1,5 +1,5 @@
 
-
+import Model from "./Model";
 
 
 const ListHeader = ({listName}) => {
@@ -17,6 +17,7 @@ const ListHeader = ({listName}) => {
           
           <button className="signout" onClick = {signOut} > SIGN OUT </button>
         </div>
+        <Model/>
       </div>
     );
     
