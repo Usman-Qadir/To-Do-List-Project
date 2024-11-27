@@ -1,7 +1,25 @@
+import { useState } from "react";
 import TickIcon from "./TickIcon"
+import Model from "./Model";
 import ProgressBar from "./ProgressBar"
 
-const ListItem = ({task}) => {
+
+const ListItem = ({task, getData }) => {
+
+  const [showModel, setShowModel] = useState(false) 
+
+  const deleteItem = async() => {
+    try {
+      const response = await fetch (`http://localhost:8000/todos/${task.id}`,{
+        method: 'DELETE'
+      })
+      if (response.status === 200){
+        getData()
+      }
+    } catch (err) {
+      console.log(err)
+    }
+  }
     return (
       <li className="list-item">
         <div className="info-container">
@@ -11,10 +29,10 @@ const ListItem = ({task}) => {
         
         <div className="button-container">
           
-          <button className = "edit">EDIT</button>
-          <button className = "delete">DELETE</button>
+          <button className = "edit" onClick = {() => setShowModel (true)} >EDIT</button>
+          <button className = "delete" onClick = {deleteItem} >DELETE </button>
         </div>
-    
+          {showModel && <Model mode = {'edit'} setShowModel = {setShowModel} getData = {getData} task = {task} />}
       </li>
     );
   }

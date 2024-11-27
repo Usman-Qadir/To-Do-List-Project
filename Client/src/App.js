@@ -6,9 +6,8 @@ import {useEffect, useState} from 'react'
 const App = () => {
 const userEmail  = 'usman.qadir.cps@gmail.com'
 const [tasks, setTasks] = useState(null)
- const getData = async () => {
 
-const userEmail  = 'usman.qadir.cps@gmail.com'
+ const getData = async () => {
   try {
     const response = await fetch(`http://localhost:8000/todos/${userEmail}`)
     const json = await response.json()
@@ -32,8 +31,8 @@ const userEmail  = 'usman.qadir.cps@gmail.com'
 
   return (
     <div className="app">
-      <ListHeader listName={' ✈️ Holiday Tick List'}/>
-      {sortedTasks?.map((task) => <ListItem key = {task.id} task = {task}/> )}
+      <ListHeader listName={' ✈️ Holiday Tick List'} getData = {getData} />
+      {sortedTasks?.map((task) => <ListItem key = {task.id} task = {task} getData = {getData} /> )}
 
     </div>
   );

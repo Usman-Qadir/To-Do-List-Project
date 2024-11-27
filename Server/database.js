@@ -10,4 +10,4 @@ const pool = new Pool({
     database: 'To-Do-App-Project'
 })
 
-module.exports = pool
+module.exports = pool;
