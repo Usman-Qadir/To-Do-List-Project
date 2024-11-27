@@ -15,16 +15,15 @@ const authToken = false
     const response = await fetch(`${process.env.REACT_APP_SERVERURL}/todos/${userEmail}`)
     const json = await response.json()
     setTasks(json)
-
-
   } catch (err) {
     console.error(err) 
-    
-    
+      }
+}
+ useEffect( () => {
+  if (authToken){
+    getData()
   }
-
- }
- useEffect( () => getData, [])
+ })
 
  console.log(tasks)
 
