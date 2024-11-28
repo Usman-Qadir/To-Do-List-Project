@@ -18,7 +18,14 @@ if (!isLoggedIn && password !== confirmPassword){
   setError('Make sure confirm passwords match')
   return
 }
- await fetch (`${process.env.REACT_APP_SERVERURL}/${endPoint}`)
+ const response = await fetch (`${process.env.REACT_APP_SERVERURL}/${endPoint}`, {
+  method: 'POST',
+  headers: {'Content-Type' : 'application/json'},
+  body: JSON.stringify({email, password})
+ })
+
+ const data = await response.json()
+ console.log(data)
 }
 
     return (
@@ -27,9 +34,9 @@ if (!isLoggedIn && password !== confirmPassword){
 <form>
   <h2>{isLoggedIn ? 'Please log IN!': 'Please Sign UP!'} </h2>
   
-  <input type = "email" placeholder = "email"/>
-  <input type = "password" placeholder = "password"/>
-  {! isLoggedIn && <input type = "password" placeholder = "confirm password"/>}
+  <input type = "email" placeholder = "email" onChange={(e) => setEmail(e.target.value)}/>
+  <input type = "password" placeholder = "password" onChange={(e) => setPassword(e.target.value)}/>
+  {! isLoggedIn && <input type = "password" placeholder = "confirm password" onChange={(e) => setConfirmPassword(e.target.value)}/>}
   <input type="submit" className="create" onClick = { (e) => handleSubmit(e, isLoggedIn ? 'Sign IN': 'Sign UP' )}/>
   {error && <p>{error}</p>}
 </form>

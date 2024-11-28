@@ -4,7 +4,8 @@ const { v4: uuid4 } = require('uuid')
 const app = express()
 const cors = require('cors')
 const pool = require('./database')
-
+const bcrypt = require('bcrypt')
+const jwt = require ('jsonwebtoken')
 
 app.use(cors())
 app.use(express.json())
@@ -16,6 +17,8 @@ app.get('/todos/:userEmail', async (req,res) => {
         const todos = await pool.query('SELECT * FROM todos WHERE user_email = $1', [userEmail])
         res.json(todos.rows)
 
+       const token = jwt.sign({email}, 'secret', {expiresIn: '1hr'})
+        res.json({email, token})
     } catch (error) {
         console.error(error)
 
@@ -64,5 +67,32 @@ app.delete('/todos/:id', async (req, res) => {
       console.log(err)  
     }
 })
+
+//* Sign UP
+
+app.post('/signup', async (req, res) => {
+    const {email, password} = req.body
+    const salt = bcrypt.genSaltSync(10)
+    const hashedPassword = bcrypt.hashSync(password, salt)
+
+    try {
+    const signUP = await pool.query(`INSERTN into users (email, hashed_password) VALUES($1, $2) ` ,
+
+    [email, hashedPassword])
+} catch (err) {
+    console.log(err)
+}
+})
+
+//* Sign IN
+
+app.post('/signin', async (req, res) => {
+    const {email, password} = req.body
+    try {
+        
+    } catch (err) {
+        console.log(err)
+    }
+    })
 
 app.listen(PORT,() => console.log(`server running on PORT ${PORT}`))
