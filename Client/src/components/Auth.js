@@ -1,11 +1,13 @@
 import { useState } from "react";
+import {useCookies}  from 'react-cookie';
 
 const Auth = () => {
+  const [cookies, setCookie, removeCookie] = useCookies(null)
   const [isLoggedIn, setIsloggedIn] = useState(true)
   const [error, setError] = useState(null)
-  const [email, setEmail] = useState(null)
-  const [password, setPassword] = useState(null)
-  const [confirmPassword, setConfirmPassword] = useState(null)
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [confirmPassword, setConfirmPassword] = useState('')
   
 const viewSignIN = (status) => {
   setError(null)
@@ -25,6 +27,16 @@ if (!isLoggedIn && password !== confirmPassword){
  })
 
  const data = await response.json()
+
+ if (data.detail){
+  setError(data.detail)
+ }
+ else{
+  setCookie('Email', data.email)
+  setCookie('AuthToken', data.token)
+
+  window.location.reload()
+ }
  console.log(data)
 }
 

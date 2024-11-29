@@ -226,7 +226,7 @@ input{
 .auth-container-box form{
     display: flex;
     flex-direction: column;
-    height: 350px;
+    height: 420px;
     padding: 20px;
 }
 
