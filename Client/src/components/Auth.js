@@ -25,6 +25,7 @@ if (!isLoggedIn && password !== confirmPassword){
   headers: {'Content-Type' : 'application/json'},
   body: JSON.stringify({email, password})
  })
+ console.log('Fetch URL:', `${process.env.REACT_APP_SERVERURL}/${endPoint}`);
 
  const data = await response.json()
 
@@ -33,7 +34,7 @@ if (!isLoggedIn && password !== confirmPassword){
  }
  else{
   setCookie('Email', data.email)
-  setCookie('AuthToken', data.token)
+  setCookie('authToken', data.token)
 
   window.location.reload()
  }
@@ -49,7 +50,7 @@ if (!isLoggedIn && password !== confirmPassword){
   <input type = "email" placeholder = "email" onChange={(e) => setEmail(e.target.value)}/>
   <input type = "password" placeholder = "password" onChange={(e) => setPassword(e.target.value)}/>
   {! isLoggedIn && <input type = "password" placeholder = "confirm password" onChange={(e) => setConfirmPassword(e.target.value)}/>}
-  <input type="submit" className="create" onClick = { (e) => handleSubmit(e, isLoggedIn ? 'Sign IN': 'Sign UP' )}/>
+  <input type="submit" className="create" onClick = { (e) => handleSubmit(e, isLoggedIn ? 'signin': 'signup' )}/>
   {error && <p>{error}</p>}
 </form>
 <div className="auth-options">

@@ -39,6 +39,7 @@ const editData = async (e) => {
     headers: {'Content-Type': 'application/json'},
     body: JSON.stringify(data)
   })
+  
   if (response.status === 200){
     setShowModel(false)
     getData()

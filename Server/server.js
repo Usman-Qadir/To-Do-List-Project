@@ -76,12 +76,12 @@ app.post('/signup', async (req, res) => {
     const hashedPassword = bcrypt.hashSync(password, salt)
 
     try {
-    const signup = await pool.query(`INSERTN into users (email, hashed_password) VALUES($1, $2) ` ,
+    const signup = await pool.query(`INSERT INTO users (email, hashed_password) VALUES($1, $2) ` ,
     [email, hashedPassword])
 
     const token = jwt.sign({email}, 'secret', {expiresIn: '1hr'})
         res.json({email, token})
-        
+
 } catch (err) {
     console.log(err)
 }
@@ -92,7 +92,21 @@ app.post('/signup', async (req, res) => {
 app.post('/signin', async (req, res) => {
     const {email, password} = req.body
     try {
+      const users =  await pool.query('SELECT * FROM users WHERE email = $1', [email]) 
+
+      if (!users.rows.length) 
+        return res.json({detail: 'User does not exist!'})
+
+        const success = await bcrypt.compare(password, users.rows[0].hashedPassword)
+        const token = jwt.sign({email}, 'secret', {expiresIn: '1hr'})
         
+        if (success){
+            res.json({'email' : users.rows[0].email, token})
+        }
+        else{
+            res.json({detail: 'Login Failed'})
+        }
+
     } catch (err) {
         console.log(err)
     }

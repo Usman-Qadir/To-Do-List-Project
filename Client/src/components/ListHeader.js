@@ -1,11 +1,18 @@
 import Model from "./Model";
 import { useState } from "react";
+import { useCookies } from "react-cookie";
+
+
 
 const ListHeader = ({ listName, getData }) => {
+  const [cookies, setCookie, removeCookie] = useCookies(null)
   const [showModel, setShowModel] = useState(false);
  
   const signOut = () => {
     console.log("Signing out...");
+    removeCookie('Email')
+    removeCookie('authToken')
+    window.location.reload()
     // Implement your actual sign-out logic here
   };
 
