@@ -8,12 +8,14 @@ const ListHeader = ({ listName, getData }) => {
   const [cookies, setCookie, removeCookie] = useCookies(null)
   const [showModel, setShowModel] = useState(false);
  
+  //* Implemented actual sign-out logic here
+
   const signOut = () => {
     console.log("Signing out...");
     removeCookie('Email')
-    removeCookie('authToken')
+    removeCookie('AuthToken')
     window.location.reload()
-    // Implement your actual sign-out logic here
+    
   };
 
   return (
