@@ -25,11 +25,11 @@ const [tasks, setTasks] = useState(null)
   if (authToken){
     getData()
   }
- })
+ }, [authToken])
 
  console.log(tasks)
 
- /*sorting tasks*/
+ //* sorting tasks
 
  const sortedTasks = tasks?.sort((a,b) => new Date(a.date) - new Date(b.date))
 

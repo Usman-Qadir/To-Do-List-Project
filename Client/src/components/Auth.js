@@ -44,7 +44,7 @@ const Auth = () => {
                 setError(data.detail);
             } else {
                 setCookie('Email', data.email, { path: '/', secure: true, sameSite: 'strict' });
-                setCookie('AuthToken', data.token, { path: '/', secure: true, sameSite: 'strict' });
+                setCookie('authToken', data.token, { path: '/', secure: true, sameSite: 'strict' });
                 window.location.reload();
             }
         } catch (err) {
