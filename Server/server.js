@@ -12,7 +12,8 @@ app.use(express.json());
 
 const JWT_SECRET = process.env.JWT_SECRET || 'default_secret_key';
 
-// Get todos by user email
+//* Get todos by user email
+
 app.get('/todos/:userEmail', async (req, res) => {
     const { userEmail } = req.params;
 
@@ -26,7 +27,8 @@ app.get('/todos/:userEmail', async (req, res) => {
     }
 });
 
-// Create a new todo
+//* Create a new todo
+
 app.post('/todos', async (req, res) => {
     const { user_email, title, progress, date } = req.body;
     const id = uuid4();

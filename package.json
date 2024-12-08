@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "if-env TYPE = server && (cd server && npm install) || (cd client && npm install)",
-    "server":"node ./Server/server.js",
-    "client":" cd Client && npm install"
+    "server": "node ./Server/server.js",
+    "client": " cd Client && npm install"
   },
   "author": "",
   "license": "ISC",
