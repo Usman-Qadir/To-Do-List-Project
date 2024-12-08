@@ -6,10 +6,13 @@ const ListHeader = ({ listName, getData }) => {
     const [cookies, setCookie, removeCookie] = useCookies(null);
     const [showModel, setShowModel] = useState(false);
 
+
+//* Signout logic
+
     const signOut = () => {
         removeCookie('authToken', { path: '/' });
         removeCookie('Email', { path: '/' });
-        window.location.reload(); // Reloads the page to reset the state
+        window.location.reload(); //* Reloads the page to reset the state
     };
 
     return (
