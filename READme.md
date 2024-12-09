@@ -35,7 +35,7 @@ Follow these steps to run the application locally.
 3. Install dependencies:
 
    ``` bash
-   npm install
+npm install
 
 4. Create a .env file in the backend directory and add the following:
 
@@ -47,28 +47,35 @@ JWT_SECRET=your_jwt_secret
 
 5. Start the backend server:
 
-  ``` bash
+   ``` bash
 Copy code
 npm start
-Frontend Setup
-Navigate to the frontend directory:
 
-bash
+### Frontend Setup
+
+6. Navigate to the frontend directory:
+
+  ``` bash
+
 Copy code
 cd ../frontend
-Install dependencies:
+
+7. Install dependencies:
 
 bash
 Copy code
 npm install
-Create a .env file in the frontend directory and add the following:
 
-env
+8. Create a .env file in the frontend directory and add the following:
+
+  ``` env
+
 Copy code
 REACT_APP_SERVERURL=http://localhost:8000
-Start the frontend development server:
 
-bash
+8. Start the frontend development server:
+
+  ```bash
 Copy code
 npm start
 Usage
