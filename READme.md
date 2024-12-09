@@ -33,48 +33,39 @@ Follow these steps to run the application locally.
    cd backend
    
 3. Install dependencies:
-
-   ``` bash
+  ``` bash
 npm install
 
 4. Create a .env file in the backend directory and add the following:
-
-   ``` env
+  ``` env
 Copy code
 PORT=8000
 DATABASE_URL=your_postgresql_connection_string
 JWT_SECRET=your_jwt_secret
 
 5. Start the backend server:
-
-   ``` bash
+  ``` bash
 Copy code
 npm start
 
 ### Frontend Setup
 
 6. Navigate to the frontend directory:
-
   ``` bash
-
 Copy code
 cd ../frontend
 
 7. Install dependencies:
-
-bash
+  ```bash
 Copy code
 npm install
 
 8. Create a .env file in the frontend directory and add the following:
-
   ``` env
-
 Copy code
 REACT_APP_SERVERURL=http://localhost:8000
 
 8. Start the frontend development server:
-
   ```bash
 Copy code
 npm start
