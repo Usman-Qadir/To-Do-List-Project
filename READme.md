@@ -24,27 +24,22 @@ Follow these steps to run the application locally.
 ### Backend Setup
 
 1. Clone the repository:
-
-``` bash
-
+   ```bash
    git clone https://github.com/your-username/task-manager.git
    cd task-manager
 
 2. Navigate to the backend directory:
-``` bash
-
-cd backend
+   ``` bash
+   cd backend
    
 3. Install dependencies:
 
-``` bash
-
+   ``` bash
    npm install
 
 4. Create a .env file in the backend directory and add the following:
 
-``` env
-
+   ``` env
 Copy code
 PORT=8000
 DATABASE_URL=your_postgresql_connection_string
@@ -52,43 +47,34 @@ JWT_SECRET=your_jwt_secret
 
 5. Start the backend server:
 
-``` bash
-
+  ``` bash
 Copy code
 npm start
 Frontend Setup
+Navigate to the frontend directory:
 
-6. Navigate to the frontend directory:
-
-``` bash
-
+bash
 Copy code
 cd ../frontend
+Install dependencies:
 
-7. Install dependencies:
-
-``` bash
-
+bash
 Copy code
 npm install
+Create a .env file in the frontend directory and add the following:
 
-8. Create a .env file in the frontend directory and add the following:
-
-``` env
-
+env
 Copy code
 REACT_APP_SERVERURL=http://localhost:8000
+Start the frontend development server:
 
-9. Start the frontend development server:
-
-``` bash
-
+bash
 Copy code
 npm start
-
 Usage
 Open your browser and navigate to:
 
+arduino
 Copy code
 http://localhost:3000
 Sign up for an account and log in.
@@ -114,7 +100,6 @@ task-manager/
 │   ├── public/
 │   └── package.json
 └── README.md
-
 Technologies Used
 Frontend: React.js
 Backend: Node.js, Express.js
