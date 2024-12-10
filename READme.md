@@ -37,8 +37,8 @@ Follow these steps to run the application locally.
   npm install
 
 4. Create a .env file in the backend directory and add the following:
-  ``` env
-  Copy code
+  ` code `
+
   PORT=8000
   DATABASE_URL=your_postgresql_connection_string
   JWT_SECRET=your_jwt_secret
