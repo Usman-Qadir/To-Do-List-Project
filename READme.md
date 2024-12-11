@@ -24,94 +24,99 @@ Follow these steps to run the application locally.
 ### Backend Setup
 
 1. Clone the repository:
-   ```bash
+   ```shell
    git clone https://github.com/your-username/task-manager.git
    cd task-manager
+   ```
 
 2. Navigate to the backend directory:
-   ``` bash
+   ```shell
    cd backend
-   
+   ```
+
 3. Install dependencies:
-  ``` bash
-  npm install
+   ```shell
+   npm install
+   ```
 
-4. Create a .env file in the backend directory and add the following:
-  ` code `
-
-  PORT=8000
-  DATABASE_URL=your_postgresql_connection_string
-  JWT_SECRET=your_jwt_secret
+4. Create a `.env` file in the backend directory and add the following:
+   ```env
+   PORT=8000
+   DATABASE_URL=your_postgresql_connection_string
+   JWT_SECRET=your_jwt_secret
+   ```
 
 5. Start the backend server:
-  ``` bash
-Copy code
-npm start
+   ```shell
+   npm start
+   ```
 
 ### Frontend Setup
 
-6. Navigate to the frontend directory:
-  ``` bash
-Copy code
-cd ../frontend
+1. Navigate to the frontend directory:
+   ```shell
+   cd ../frontend
+   ```
 
-7. Install dependencies:
-  ```bash
-Copy code
-npm install
+2. Install dependencies:
+   ```shell
+   npm install
+   ```
 
-8. Create a .env file in the frontend directory and add the following:
-  ``` env
-Copy code
-REACT_APP_SERVERURL=http://localhost:8000
+3. Create a `.env` file in the frontend directory and add the following:
+   ```env
+   REACT_APP_SERVERURL=http://localhost:8000
+   ```
 
-8. Start the frontend development server:
-  ```bash
-Copy code
-npm start
-Usage
+4. Start the frontend development server:
+   ```shell
+   npm start
+   ```
+
+## Usage
+
 Open your browser and navigate to:
-
-arduino
-Copy code
+```arduino
 http://localhost:3000
-Sign up for an account and log in.
+```
 
-Manage tasks by adding, editing, deleting, and tracking their progress.
+1. Sign up for an account and log in.
+2. Manage tasks by adding, editing, deleting, and tracking their progress.
 
-Project Structure
-bash
-Copy code
+## Project Structure
+
+```bash
 task-manager/
-├── backend/
+├── Server/
 │   ├── server.js
 │   ├── database.js
 │   ├── routes/
 │   ├── controllers/
 │   └── .env
-├── frontend/
+├── Client/
 │   ├── src/
 │   │   ├── components/
 │   │   ├── App.js
 │   │   ├── index.js
+│   │   ├── index.css
 │   │   └── .env
 │   ├── public/
 │   └── package.json
 └── README.md
-Technologies Used
-Frontend: React.js
-Backend: Node.js, Express.js
-Database: PostgreSQL
-Styling: CSS
-Contributing
+```
+
+## Technologies Used
+
+- **Frontend:** React.js
+- **Backend:** Node.js, Express.js
+- **Database:** PostgreSQL
+- **Styling:** CSS
+
+## Contributing
+
 Contributions are welcome! Please fork the repository and submit a pull request.
 
-License
+## License
+
 This project is licensed under the MIT License. See the LICENSE file for details.
 
-Contact
-For questions or support, contact:
-
-Name: [Your Name]
-Email: [Your Email]
-GitHub: https://github.com/your-username
